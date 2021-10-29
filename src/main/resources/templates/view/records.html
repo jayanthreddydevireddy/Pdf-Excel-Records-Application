@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<h2>All Records
+<a th:href="@{'/createExcel'}" style="float:right;"><img th:src="@{/images/EXCEL.png}" style="width:40px;margin-left:10px"></a>
+<a th:href="@{'/createPdf'}" style="float:right;"><img th:src="@{/images/PDF.png}" style="width:40px;margin-left:10px"></a>
+</h2>
+<div style="margin-top:20px">
+<table id="record" class="table table-striped table-bordered" style="width:100%">
+
+<thead>
+<tr>
+<th>PLAN_ID</th>
+<th>PLAN_NAME</th>
+<th>PLAN_STATUS</th>
+<th>PLAN_SDATE</th>
+<th>PLAN_EDATE</th>
+<th>BENFIT_AMOUNT</th>
+</tr>
+</thead>
+
+<tbody>
+<tr th:each="record : ${records}">
+<td th:text="${record.planId}"></td>
+<td th:text="${record.planName}"></td>
+<td th:text="${record.planStatus}"></td>
+<td th:text="${record.planSdate}"></td>
+<td th:text="${record.planEdate}"></td>
+<td th:text="${record.benfitAmt}"></td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
